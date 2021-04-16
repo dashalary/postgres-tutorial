@@ -1,13 +1,13 @@
 doctype html 
 html
     head
-        title=data.title
+        title=data.title //setting the title of the page to the title field of the item
        
     body 
         h1=data.title 
         p=data.body
         br
-        a(href=`/update/${data.id}`) Update note.
+        a(href=`/update/${data.id}`) Update note. 
         br
         a(href=`/delete/${data.id}`) Delete note.
         br
