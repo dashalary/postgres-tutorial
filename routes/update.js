@@ -7,9 +7,9 @@ router.get("/:id", async (req, res) => {
     SELECT * FROM Note
       WHERE id=$1;
       `;
-  const values = [req.params.id];
-  const { rows } = await db.query(query, values);
-  res.render("update", { data: rows[0] });
+  const values = [req.params.id]; // id param is retrieved from the url
+  const { rows } = await db.query(query, values); // run the query. url's id param is passed as an arg to the SQL command
+  res.render("update", { data: rows[0] }); // render the update page
 });
 
 router.post("/:id", async (req, res) => {
