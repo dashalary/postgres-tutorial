@@ -5,19 +5,19 @@ html
         
     body 
         h1 Your entries: 
-        - var n=0; // will show the number of items in the db
+        - var n=0; 
         table  
             tr 
                 th #
                 th Title 
                 th Option
              
-                for data in item //perform iteration to tell Pug that it has to create a tr and 3 td elements
+                for data in item 
                     - n++
                     tr
                         td= n
                         td 
-                            a(href=`/read/${data.id}`)=data.title //data obj will be passed to this file and contain an array of the items in the db. we display only the title of each one. below, the anchor elements will redirect user to update and delete routes
+                            a(href=`/read/${data.id}`)=data.title 
                         td
                             a(href=`/update/${data.id}`) Update 
                             a(href=`/delete/${data.id}`) Delete

@@ -14,7 +14,7 @@ app.get("/", async (req, res) => {
     ORDER BY id;
     `;
   const { rows } = await db.query(query); // run the query
-  res.json(rows); // log out JSON output, which contains the list of our records in the db
+  res.render("index", { item: rows }); // log out JSON output, which contains the list of our records in the db
 });
 
 app.listen(3000, () => { // telling express to run at port 3000
