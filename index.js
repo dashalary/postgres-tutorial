@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const create = require("./routes/create");
 const read = require("./routes/read");
 const update = require("./routes/update");
+const del = require("./routes/del");
 const app = express();
 
 app.set("view engine", "pug"); // telling Express that the view engine will be Pug
@@ -12,6 +13,7 @@ app.use(morgan("dev"));
 app.use("/create", create);
 app.use("/read", read);
 app.use("/update", update);
+app.use("/delete", del);
 
 /* telling postgres to list all records in the db and display them in the order of id */
 app.get("/", async (req, res) => {
