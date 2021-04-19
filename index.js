@@ -28,3 +28,5 @@ app.get("/", async (req, res) => {
 app.listen(3000, () => { // telling express to run at port 3000
   console.log("At port 3000");
 });
+
+/* to run in browser, enter npx nodemon index.js in terminal */
